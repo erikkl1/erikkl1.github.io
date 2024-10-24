@@ -1,4 +1,6 @@
 import React from 'react';
+import cv from '../cv.pdf'
+import Footer from "../components/Footer.jsx";
 
 const Resume = () => {
   return (
@@ -6,7 +8,7 @@ const Resume = () => {
           <h1 className="text-4xl font-bold mb-8">My Resume</h1>
           <div className="mb-4">
               <a
-                  href="/resume.pdf"
+                  href={cv}
                   download
                   className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
               >
@@ -14,15 +16,11 @@ const Resume = () => {
               </a>
           </div>
           <iframe
-              src="/resume.pdf"
+              src={cv}
               title="Resume"
               className="w-full h-screen border-2 border-gray-300 rounded"
           ></iframe>
-          <footer className="mt-12 py-4 border-t">
-              <div className="container mx-auto text-center">
-                  <a href="/public/impressum.html" className="text-blue-500 hover:underline">Impressum / Datenschutzerklärung</a>
-              </div>
-          </footer>
+          <Footer/>
       </div>
   );
 };

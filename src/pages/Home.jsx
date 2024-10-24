@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { Linkedin, User } from 'lucide-react';
+import Footer from "../components/Footer.jsx";
 
 const skillGroups = [
   {
@@ -91,11 +92,7 @@ const Home = () => {
           </div>
         </div>
       ))}
-      <footer className="mt-12 py-4 border-t">
-        <div className="container mx-auto text-center">
-          <a href="/public/impressum.html" className="text-blue-500 hover:underline">Impressum / Datenschutzerklärung</a>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
