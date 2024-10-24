@@ -9,13 +9,7 @@ cache:
     - node_modules  # Cache node_modules to speed up builds
 
 script:
-  - npm run build  # Build the application
-  - npx serve -s dist
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: master
+  - git config --global user.name "Erik Klein"
+  - git remote rm origin
+  - git remote add origin https://${GITHUB_TOKEN}@github.com/erikkl1/erikkl1.github.io.git
+  - npm run deploy
