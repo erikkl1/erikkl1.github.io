@@ -1,3 +1,5 @@
+dist: jammy
+
 language: node_js
 node_js:
   - "stable"  # Use the latest stable version of Node.js
@@ -7,7 +9,14 @@ cache:
     - node_modules  # Cache node_modules to speed up builds
 
 script:
-  - npm install  # Install dependencies
   - npm test     # Run tests
   - npm run build  # Build the application
   - npx serve -s dist
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
